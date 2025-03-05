@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     template: '%s | Udeet Mittal Portfolio',
   },
   description: 'Udeet Mittal Portfolio, personal site',
+  icons:{
+    icon: 'favicon-arc.jpg',
+  },
   openGraph: {
     title: 'Udeet Mittal Portfolio',
     description: 'udeet.in',

@@ -18,7 +18,9 @@ export default function Page() {
 
 
       <p className="mb-4">
-        {`I'm Udeet Mittal, and this is my place on the internet.
+        {`I'm `}
+        <span className="font-semibold">Udeet Mittal</span>
+        {`, and this is my place on the internet.
          Your typical Indian software engineer by profession, but a not-so-typical one by passion.
         I believe my laziness drives me to automate things, my curiosity drives me to learn new things, all at a fast pace that comes naturally to me,
     and I think this is what sets me apart from the crowd. `}
@@ -28,7 +30,9 @@ export default function Page() {
      the problem statement in front of me and the people I work with do.`}
       </p>
       <p className="mb-4">
-        {`I'm currently looking for my next role as a Software Engineer in Pune, having industry experience through 4 internships + 1 full-time role.
+        {`I'm currently looking for my next role as a`}
+        <span className="font-semibold"> Software Engineer in Pune</span>
+        {`, having industry experience through 4 internships + 1 full-time role.
         Feel free to reach out at any of the socials below.`}
       </p>
 
