@@ -27,6 +27,10 @@
   html {
     color-scheme: dark;
   }
+  ::selection {
+    background-color: #6BADCE;
+    color: #0f0f0f;
+  }
 }
 
 html {
