@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BlogPosts } from "app/components/posts";
+import VisitorCounter from "app/components/VisitorCounter";
 
 export default function Page() {
   return (
@@ -31,7 +32,7 @@ export default function Page() {
       </p>
       <p className="mb-4">
         {`I'm currently looking for my next role as a`}
-        <span className="font-semibold"> Software Engineer in Pune</span>
+        <span className="font-semibold"> Software Engineer</span>
         {`, having industry experience through 4 internships + 1 full-time role.
         Feel free to reach out at any of the socials below.`}
       </p>
@@ -39,6 +40,7 @@ export default function Page() {
       {/* <div className="my-8">
         <BlogPosts />
       </div> */}
+      <VisitorCounter/>
     </section>
   );
 }
