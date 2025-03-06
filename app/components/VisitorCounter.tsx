@@ -41,14 +41,9 @@ const VisitorCounter = () => {
   }, []);
 
   return (
-    <div>
-      {/* <h2>Unique Visitors</h2> */}
-      {visitorCount !== null ? (
-        <p className="text-right text-sm text-gray-600 mt-4">total unique visitors: {visitorCount}</p>
-      ) : (
-        <p className="text-right text-sm text-gray-600 mt-4">Loading...</p>
-      )}
-    </div>
+  <span className="ml-2">
+  {visitorCount !== null ? `total unique visitors: ${visitorCount}` : "Loading..."}
+</span>
   );
 };
 

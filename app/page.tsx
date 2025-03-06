@@ -44,8 +44,7 @@ export default function Page() {
     and I think this is what sets me apart from the crowd. `}
       </p>
       <p className="mb-4">
-        {`I've come to realise that the domain and specific technologies I work in don't really matter,
-     the problem statement in front of me and the people I work with do.`}
+        {`Though having worked most extensively in full stack development and data analytics, I've come to realise that the domain and specific technologies I work in don't really matter—the problem statement in front of me and the people I work with do.`}
       </p>
       <p className="mb-4">
         {`I'm currently looking for my next role as a `}
@@ -67,7 +66,14 @@ export default function Page() {
       {/* <div className="my-8">
         <BlogPosts />
       </div> */}
-      <VisitorCounter />
+      {/* <span className="text-left text-sm text-gray-600 mt-4">currently in📍Pune</span>
+      <VisitorCounter /> */}
+      <span className="text-sm text-gray-600 mt-4 flex items-center justify-between">
+        <span className="text-left">currently in📍Pune</span>
+        <span className="text-right">  
+          <VisitorCounter />
+        </span>
+      </span>
     </section>
   );
 }
