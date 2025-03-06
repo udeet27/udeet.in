@@ -44,7 +44,7 @@ export default function Page() {
     and I think this is what sets me apart from the crowd. `}
       </p>
       <p className="mb-4">
-        {`I've come to realise that the domain and specfic technologies I work in don't really matter,
+        {`I've come to realise that the domain and specific technologies I work in don't really matter,
      the problem statement in front of me and the people I work with do.`}
       </p>
       <p className="mb-4">
