@@ -8,24 +8,36 @@ export default function Page() {
       <h1 className="mb-4 text-2xl font-semibold tracking-tighter">Hey!</h1>
 
       {/* Image with mesh blur on hover */}
-      <div className="relative w-40 h-40 mb-6 rounded-lg overflow-hidden transition-all duration-300 hover:blur-[2px]">
+      <div className="relative w-40 h-40 mb-6 rounded-lg overflow-hidden">
         <Image
-          src="/udeet.jpg" // Ensure the image is in the public folder
+          src="/udeet-bw.jpeg" // Black and white image
           alt="Profile Picture"
           layout="fill"
           objectFit="cover"
+          className="transition-opacity duration-400"
+        />
+        <Image
+          src="/udeet-color.jpeg" // Color image
+          alt="Profile Picture"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-0 hover:opacity-100 transition-opacity duration-400"
         />
       </div>
 
-
       <p className="mb-4">
         {`I'm `}
-        <span className="font-semibold" style={{
-      backgroundColor: '#9eff9e', // Light green background color
-      color: '#0f0f0f',           // Keep the text color unchanged
-      padding: '0 4px',           // Add padding for better appearance
-      borderRadius: '4px'         // Rounded edges similar to the image
-    }}>Udeet Mittal</span>
+        <span
+          className="font-semibold"
+          style={{
+            backgroundColor: "#9eff9e", // Light green background color
+            color: "#0f0f0f", // Keep the text color unchanged
+            padding: "0 4px", // Add padding for better appearance
+            borderRadius: "4px", // Rounded edges similar to the image
+          }}
+        >
+          Udeet Mittal
+        </span>
         {`, and this is my place on the internet.
          Your typical Indian software engineer by profession, but a not-so-typical one by passion.
         I believe my laziness drives me to automate things, my curiosity drives me to learn new things, all at a fast pace with an intense focus on attention to detail,
@@ -37,12 +49,17 @@ export default function Page() {
       </p>
       <p className="mb-4">
         {`I'm currently looking for my next role as a `}
-        <span className="font-semibold" style={{
-      backgroundColor: '#FFC78F', // Light green background color
-      color: '#0f0f0f',           // Keep the text color unchanged
-      padding: '0 4px',           // Add padding for better appearance
-      borderRadius: '4px'         // Rounded edges similar to the image
-    }}>Software Engineer</span>
+        <span
+          className="font-semibold"
+          style={{
+            backgroundColor: "#FFC78F", // Light green background color
+            color: "#0f0f0f", // Keep the text color unchanged
+            padding: "0 4px", // Add padding for better appearance
+            borderRadius: "4px", // Rounded edges similar to the image
+          }}
+        >
+          Software Engineer
+        </span>
         {`, having industry experience through 4 internships + 1 full-time role.
         Feel free to reach out at any of the socials below.`}
       </p>
@@ -50,7 +67,7 @@ export default function Page() {
       {/* <div className="my-8">
         <BlogPosts />
       </div> */}
-      <VisitorCounter/>
+      <VisitorCounter />
     </section>
   );
 }
