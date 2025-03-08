@@ -1,5 +1,5 @@
 import { getBlogPosts } from 'app/projects/utils'
-import { getActualBlogPosts } from 'app/blogs/utils'
+import { getActualBlogPosts } from 'app/blog/utils'
 
 export const baseUrl = 'https://udeet.in'
 
@@ -15,11 +15,11 @@ export default async function sitemap() {
   }))
 
   let blogs2 = getActualBlogPosts().map((post) => ({
-    url: `${baseUrl}/blogs/${post.slug}`,
+    url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }))
 
-  let routes2 = ['', '/blogs'].map((route) => ({
+  let routes2 = ['', '/blog'].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))

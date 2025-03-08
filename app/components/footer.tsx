@@ -65,7 +65,7 @@ export default function   Footer() {
         </li>
       </ul>
       <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        <small>last updated 6<sup>th</sup> Mar '25</small>
+        <small>last updated 9<sup>th</sup> Mar '25</small>
       </p>
     </footer>
   )
