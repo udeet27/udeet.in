@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { BlogPosts } from "app/components/posts";
 import VisitorCounter from "app/components/VisitorCounter";
+import WeatherWidget from "./components/WeatherWidget";
+import TimeDisplay from "./components/TimeDisplay";
 
 export default function Page() {
   return (
@@ -69,11 +71,14 @@ export default function Page() {
       {/* <span className="text-left text-sm text-gray-600 mt-4">currently in📍Pune</span>
       <VisitorCounter /> */}
       <span className="text-sm text-gray-600 mt-4 flex items-center justify-between">
-        <span className="text-left">currently in📍Pune</span>
+        <span className="text-left">currently in📍{process.env.NEXT_PUBLIC_CITY}
+        <WeatherWidget />
+        </span>
         <span className="text-right">  
           <VisitorCounter />
         </span>
       </span>
+      <TimeDisplay />
     </section>
   );
 }
