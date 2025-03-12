@@ -3,6 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
+import Loader from "./Loader";
 
 // Initialize Supabase client
 const supabase = createClient(
@@ -41,12 +42,14 @@ const VisitorCounter = () => {
   }, []);
 
   return (
-  <span className="ml-2 relative group">
-      <span className="absolute left-0 mt-[-1.5rem] w-max px-2 py-1 text-xs text-[#0f0f0f] bg-[#D1E5F4] rounded opacity-0 group-hover:opacity-100 transition-opacity">
-        calculated on unique IP addresses
-      </span>
-  {visitorCount !== null ? `total unique visitors: ${visitorCount}` : "Loading..."}
-</span>
+    <span className="ml-2 relative group inline-block min-w-[150px] text-center">
+    <span className="absolute left-0 mt-[-1.5rem] w-max px-2 py-1 text-xs text-[#0f0f0f] bg-[#D1E5F4] rounded opacity-0 group-hover:opacity-100 transition-opacity">
+      calculated on unique IP addresses
+    </span>
+    <span className="inline-block min-w-[150px]">
+      {visitorCount !== null ? `total unique visitors: ${visitorCount}` : <Loader />}
+    </span>
+  </span>
   );
 };
 
