@@ -4,6 +4,7 @@ import VisitorCounter from "app/components/VisitorCounter";
 import WeatherWidget from "./components/WeatherWidget";
 import TimeDisplay from "./components/TimeDisplay";
 import CommentSection from "./components/CommentSection";
+import Footer from "./components/footer";
 
 export default function Page() {
   return (
@@ -90,6 +91,7 @@ export default function Page() {
         </span>
         <TimeDisplay />
       </section>
+      <Footer/>
       <div className="flex dark:bg-[#070707]">
         <CommentSection />
       </div>

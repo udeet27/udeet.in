@@ -61,7 +61,7 @@ export default function CommentSection() {
 
     if (error) {
       console.error("Error fetching comments:", error.message);
-    } else if (data){
+    } else if (data) {
       const formattedComments = data.map((c) => ({
         ...c,
         formatted_timestamp: new Date(c.created_at).toLocaleString("en-IN", {
@@ -135,7 +135,7 @@ export default function CommentSection() {
   };
 
   return (
-    <div className="p-4">
+    <div className="mb-3 w-full max-w-full overflow-x-hidden">
       <AnimatePresence>
         {showMessage && (
           <motion.div
@@ -143,7 +143,7 @@ export default function CommentSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.5 }}
-            className="fixed bottom-10 justify-between items-center dark:bg-[#FFFAF1] dark:text-[#070707] bg-[#070707] text-[#FFFAF1] p-3 text-sm rounded-lg shadow-lg"
+            className="fixed bottom-10 justify-between items-center dark:bg-[#FFFAF1] dark:text-[#070707] bg-[#070707] text-[#FFFAF1] px-2 py-2 mx-1 text-sm rounded-lg shadow-lg"
           >
             Your comment is posted!
           </motion.div>
@@ -152,7 +152,7 @@ export default function CommentSection() {
 
       {user ? (
         <div className="mt-4">
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
             <img
               src={user.user_metadata.avatar_url}
               alt={user.user_metadata.full_name}
@@ -174,7 +174,7 @@ export default function CommentSection() {
               e.preventDefault();
               postComment();
             }}
-            className="flex flex-col gap-3 p-4"
+            className="flex flex-col items-center gap-3 p-4"
           >
             <textarea
               value={comment}
@@ -191,27 +191,30 @@ export default function CommentSection() {
             />
             <button
               type="submit"
-              className="cursor-pointer text-sm px-3 py-1.5 text-[#FFFAF1] rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 shadow-sm transition-all hover:shadow-md hover:from-blue-600 hover:to-blue-700 active:scale-95"
+              className="cursor-pointer text-sm px-6 py-2 text-[#FFFAF1] rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 shadow-sm transition-all hover:shadow-md hover:from-blue-600 hover:to-blue-700 active:scale-95"
             >
               Post
             </button>
+            <span className="text-xs text-gray-500">
+              or press <kbd>enter</kbd> to post
+            </span>
           </form>
         </div>
       ) : null}
 
-      <div className="mt-6 flex justify-between items-center">
+      <div className="mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
         <div className="flex items-center gap-2">
           <span className="text-base font-semibold">Comments</span>
-          <span className="text-xs text-gray-500 mx-2 my-2 whitespace-nowrap">
+          <span className="text-xs text-gray-500 whitespace-nowrap">
             (in IST)
           </span>
         </div>
         {!user && (
-          <>
+          <div className="flex flex-wrap gap-2 w-full sm:w-auto">
             <button
               type="button"
               onClick={signInWithGitHub}
-              className="cursor-pointer mx-3 py-1.5 px-3 max-w-md flex justify-center items-center bg-[#24292e] hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-[#fafbfc] w-full transition ease-in duration-200 text-center text-xs font-semibold hover:shadow-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+              className="cursor-pointer py-1.5 px-3 flex justify-center items-center bg-[#24292e] hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-[#fafbfc] transition ease-in duration-200 text-center text-xs font-semibold hover:shadow-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -264,7 +267,7 @@ export default function CommentSection() {
                 <span style={{ display: "none" }}>Log in with Google</span>
               </div>
             </button>
-          </>
+          </div>
         )}
       </div>
 
@@ -274,9 +277,6 @@ export default function CommentSection() {
             comments.map((c) => (
               <motion.div
                 key={c.id}
-                // initial={{ opacity: 0, y: 10 }}
-                // animate={{ opacity: 1, y: 0 }}
-                // exit={{ opacity: 0, y: -5 }}
                 transition={{ duration: 0.2 }}
                 className="py-2"
               >
@@ -288,9 +288,11 @@ export default function CommentSection() {
                   />
                   <span className="font-medium text-sm">{c.username}</span>
                 </div>
-                <div className="ml-11 flex items-center justify-between text-gray-700 dark:text-gray-300">
-                  <span className="text-sm">{c.content}</span>
-                  <span className="mx-4 text-xs text-gray-500">
+                <div className="ml-11 flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-700 dark:text-gray-300">
+                  <span className="text-sm break-words max-w-full">
+                    {c.content}
+                  </span>
+                  <span className="text-xs text-gray-500 mt-1 sm:mt-0 sm:ml-4 whitespace-nowrap">
                     {c.formatted_timestamp}
                   </span>
                 </div>

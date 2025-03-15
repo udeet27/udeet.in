@@ -12,13 +12,12 @@ function ArrowIcon() {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
-
-export default function   Footer() {
+export default function Footer() {
   return (
-    <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
+    <footer className="mb-0">
+      <ul className="font-sm mt-6 flex flex-wrap gap-2 md:flex-nowrap md:gap-4 text-neutral-600 dark:text-neutral-300">
         <li>
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
@@ -64,9 +63,9 @@ export default function   Footer() {
           </a>
         </li>
       </ul>
-      <p className="mt-7 text-gray-500">
-        <small>last updated 15<sup>th</sup> Mar '25</small>
-      </p>
+      <span className="text-gray-500 text-xs">
+        last updated 15<sup>th</sup> Mar '25
+      </span>
     </footer>
-  )
+  );
 }
