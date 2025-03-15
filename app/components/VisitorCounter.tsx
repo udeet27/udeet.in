@@ -25,12 +25,14 @@ const VisitorCounter = () => {
       await supabase.from("visitors").upsert({ ip });
 
       // Fetch the total number of unique visitors
-      const { data, error } = await supabase.from("visitors").select("ip", { count: "exact" });
+      const { data, error } = await supabase
+        .from("visitors")
+        .select("ip", { count: "exact" });
 
       if (error) throw error;
 
       // Update visitor count state
-      setVisitorCount((data?.length || 0)+25);
+      setVisitorCount((data?.length || 0) + 25);
     } catch (err) {
       console.error("Error tracking visitor:", err);
     }
@@ -43,13 +45,17 @@ const VisitorCounter = () => {
 
   return (
     <span className="ml-2 relative group inline-block min-w-[150px] text-center">
-    <span className="absolute left-0 mt-[-1.5rem] w-max px-2 py-1 text-xs text-[#0f0f0f] bg-[#D1E5F4] rounded opacity-0 group-hover:opacity-100 transition-opacity">
-      calculated on unique IP addresses
+      <span className="absolute left-0 mt-[-1.5rem] w-max px-2 py-1 text-xs text-[#0f0f0f] bg-[#D1E5F4] rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-[-4px] transition-all duration-300 ease-in-out">
+        calculated on unique IP addresses
+      </span>
+      <span className="inline-block min-w-[150px]">
+        {visitorCount !== null ? (
+          `total unique visitors: ${visitorCount}`
+        ) : (
+          <Loader />
+        )}
+      </span>
     </span>
-    <span className="inline-block min-w-[150px]">
-      {visitorCount !== null ? `total unique visitors: ${visitorCount}` : <Loader />}
-    </span>
-  </span>
   );
 };
 

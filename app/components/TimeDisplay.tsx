@@ -19,7 +19,7 @@ const TimeDisplay = () => {
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
-  return <div className="text-sm text-gray-600">{time}</div>;
+  return <div className="text-sm text-gray-500">{time}</div>;
 };
 
 export default TimeDisplay;

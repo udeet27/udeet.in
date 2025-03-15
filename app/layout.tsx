@@ -7,6 +7,8 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+import { useEffect } from 'react'
+import { supabase } from './components/CommentSection'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -50,7 +52,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
+        'text-[#070707] bg-[#FFFAF1] dark:text-[#FFFAF1] dark:bg-[#070707]',
         GeistSans.variable,
         GeistMono.variable
       )}

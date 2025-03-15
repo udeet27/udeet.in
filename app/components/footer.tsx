@@ -64,8 +64,8 @@ export default function   Footer() {
           </a>
         </li>
       </ul>
-      <p className="mt-7 text-gray-600 dark:text-gray-600">
-        <small>last updated 12<sup>th</sup> Mar '25</small>
+      <p className="mt-7 text-gray-500">
+        <small>last updated 15<sup>th</sup> Mar '25</small>
       </p>
     </footer>
   )
