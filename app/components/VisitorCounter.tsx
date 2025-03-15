@@ -32,7 +32,7 @@ const VisitorCounter = () => {
       if (error) throw error;
 
       // Update visitor count state
-      setVisitorCount((data?.length || 0) + 25);
+      setVisitorCount((data?.length || 0));
     } catch (err) {
       console.error("Error tracking visitor:", err);
     }
