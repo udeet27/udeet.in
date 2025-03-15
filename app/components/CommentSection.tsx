@@ -61,7 +61,7 @@ export default function CommentSection() {
 
     if (error) {
       console.error("Error fetching comments:", error.message);
-    } else {
+    } else if (data){
       const formattedComments = data.map((c) => ({
         ...c,
         formatted_timestamp: new Date(c.created_at).toLocaleString("en-IN", {
