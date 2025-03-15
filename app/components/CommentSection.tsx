@@ -37,7 +37,7 @@ export default function CommentSection() {
   const getUser = async () => {
     const { data, error } = await supabase.auth.getUser();
     if (!error) {
-      setUser(data.user as User | null);
+      setUser(data.user as unknown as User);
 
       // Get the auth provider from user metadata or session
       if (data.user) {
