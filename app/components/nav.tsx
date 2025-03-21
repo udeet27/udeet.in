@@ -1,4 +1,5 @@
 import Link from 'next/link'
+// import ThemeChanger from './theme'
 
 const navItems = {
   '/': {
@@ -34,6 +35,7 @@ export function Navbar() {
             })}
           </div>
         </nav>
+        {/* <ThemeChanger /> */}
       </div>
     </aside>
   )

@@ -103,6 +103,10 @@
   background-color: #303030;
   opacity: 27%;
 }
+html {
+  min-width: 360px;
+  /* color-scheme: light; */
+}
 
 @keyframes spin-slow {
   0% { transform: rotate(0deg); }
@@ -111,6 +115,21 @@
 
 .animate-spin-slow {
   animation: spin-slow 10s linear infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-blink {
+  animation: blink 2.5s infinite;
 }
 
 body {
@@ -149,9 +168,6 @@ body {
   }
 }
 
-html {
-  min-width: 360px;
-}
 
 .prose .anchor {
   @apply absolute invisible no-underline;
