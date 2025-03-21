@@ -12,7 +12,8 @@ function VinylRecord({ size = 300, label, spin, className }: VinylRecordProps) {
     <div
       className={`relative rounded-full bg-black overflow-hidden shadow-[0_0_24px_rgba(0,0,0,0.55)] ${className}`}
       style={{ width: size, height: size }}>
-      <div className={`${spin && 'animate-spin-slow'} relative w-full h-full`}>
+      <div
+        className={`${spin ? 'animate-spin-slow' : ''} relative w-full h-full`}>
         <div className='absolute inset-0 flex items-center justify-center rounded-full'>
           {[...Array(15)].map((_, i) => (
             <div
