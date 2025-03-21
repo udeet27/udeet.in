@@ -28,7 +28,7 @@ export function ActualBlogPosts() {
               </Link>
               <Link
                 key={post.slug + "-title"}
-                className="text-neutral-900 dark:text-neutral-100 tracking-tight hover:no-underline flex-1"
+                className="text-neutral-800 dark:text-neutral-300 tracking-tight hover:no-underline flex-1"
                 href={`/blog/${post.slug}`}
               >
                 {post.metadata.title}
@@ -66,7 +66,7 @@ export function BlogPosts() {
               </Link>
               <Link
                 key={post.slug + "-title"}
-                className="text-neutral-900 dark:text-neutral-100 tracking-tight hover:no-underline flex-1"
+                className="text-neutral-800 dark:text-neutral-300 tracking-tight hover:no-underline flex-1"
                 href={`/projects/${post.slug}`}
               >
                 {post.metadata.title}

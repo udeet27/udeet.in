@@ -112,8 +112,8 @@ body {
 }
 
 ::selection {
-  background-color: #D1E5F4;
-  color: #0f0f0f;
+  background-color: #aadfaa78;
+  /* color: #303030; */
 }
 
 :root {

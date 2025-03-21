@@ -5,6 +5,7 @@ import WeatherWidget from "./components/WeatherWidget";
 import TimeDisplay from "./components/TimeDisplay";
 import CommentSection from "./components/CommentSection";
 import Footer from "./components/footer";
+import SpotifyTrack from "./components/now-playing";
 
 export default function Page() {
   return (
@@ -92,6 +93,7 @@ export default function Page() {
         <TimeDisplay />
       </section>
       <Footer/>
+      <SpotifyTrack />
       <div className="flex dark:bg-[#070707]">
         <CommentSection />
       </div>

@@ -64,7 +64,7 @@ export default function Footer() {
         </li>
       </ul>
       <span className="text-gray-500 text-xs">
-        last updated 15<sup>th</sup> Mar '25
+        last updated 21<sup>st</sup> Mar '25
       </span>
     </footer>
   );
