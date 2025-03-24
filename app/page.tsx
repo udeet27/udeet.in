@@ -6,6 +6,7 @@ import TimeDisplay from "./components/TimeDisplay";
 import CommentSection from "./components/CommentSection";
 import Footer from "./components/footer";
 import SpotifyTrack from "./components/now-playing";
+import { MapPin } from "lucide-react";
 
 export default function Page() {
   return (
@@ -82,8 +83,9 @@ export default function Page() {
         {/* <span className="text-left text-sm text-gray-600 mt-4">currently in📍Pune</span>
       <VisitorCounter /> */}
         <span className="text-sm text-gray-500 mt-4 flex items-center justify-between">
-          <span className="text-left">
-            currently in📍{process.env.NEXT_PUBLIC_CITY}
+          <span className="text-left flex items-center gap-1">
+            <MapPin size={15} strokeWidth={1.5} />
+            {process.env.NEXT_PUBLIC_CITY}
             <WeatherWidget />
           </span>
           <span className="text-right">
@@ -92,7 +94,7 @@ export default function Page() {
         </span>
         <TimeDisplay />
       </section>
-      <Footer/>
+      <Footer />
       <SpotifyTrack />
       <div className="flex dark:bg-[#070707]">
         <CommentSection />
