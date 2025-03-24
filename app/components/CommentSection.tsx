@@ -202,7 +202,7 @@ export default function CommentSection() {
         </div>
       ) : null}
 
-      <div className="mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+      <div className="mt-2 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
         <div className="flex items-center gap-2">
           <span className="text-base font-semibold">Comments</span>
           <span className="text-xs text-gray-500 whitespace-nowrap">
@@ -288,11 +288,11 @@ export default function CommentSection() {
                   />
                   <span className="font-medium text-sm">{c.username}</span>
                 </div>
-                <div className="ml-11 flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-700 dark:text-gray-300">
-                  <span className="text-sm break-words max-w-full">
+                <div className="ml-11 flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-700">
+                  <span className="text-sm break-words max-w-full dark:text-[#fffaf1c8]">
                     {c.content}
                   </span>
-                  <span className="text-xs text-gray-500 mt-1 sm:mt-0 sm:ml-4 whitespace-nowrap">
+                  <span className="text-xs text-gray-500 mt-1 dark:text-gray-500 sm:mt-0 sm:ml-4 whitespace-nowrap">
                     {c.formatted_timestamp}
                   </span>
                 </div>
