@@ -6,6 +6,7 @@ import TimeDisplay from "./components/TimeDisplay";
 import CommentSection from "./components/CommentSection";
 import Footer from "./components/footer";
 import SpotifyTrack from "./components/now-playing";
+import Lyrics from "./components/Lyrics";
 
 export default function Page() {
   return (
@@ -92,8 +93,9 @@ export default function Page() {
         </span>
         <TimeDisplay />
       </section>
-      <Footer/>
+      <Footer />
       <SpotifyTrack />
+      <Lyrics />
       <div className="flex dark:bg-[#070707]">
         <CommentSection />
       </div>
