@@ -8,6 +8,7 @@ import Footer from "./components/footer";
 import SpotifyTrack from "./components/now-playing";
 import { MapPin } from "lucide-react";
 import { BadgeCheck } from "lucide-react";
+import YTSearch from "./components/YTSearch";
 
 export default function Page() {
   return (
@@ -117,7 +118,12 @@ export default function Page() {
         <TimeDisplay />
       </section>
       <Footer />
-      <SpotifyTrack />
+      <div className="relative">
+        <SpotifyTrack /> {/* Spotify Widget */}
+        <div className="absolute top-[3.5rem] right-2 z-10">
+          <YTSearch />
+        </div>
+      </div>
       <div className="flex dark:bg-[#070707]">
         <CommentSection />
       </div>

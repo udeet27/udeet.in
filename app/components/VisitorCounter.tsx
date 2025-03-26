@@ -63,12 +63,12 @@ const VisitorCounter = () => {
   }, []);
 
   return (
-    <div className="flex justify-end">
-      <span className="ml-2 relative group inline-block min-w-[150px] sm:min-w-[200px] text-right">
-        <span className="absolute left-1/2 -translate-x-1/2 mt-[-1.5rem] w-max px-2 py-1 text-xs text-[#0f0f0f] bg-[#D1E5F4] rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-[-4px] transition-all duration-300 ease-in-out whitespace-nowrap">
+    <div className="flex justify-end overflow-hidden">
+      <span className="ml-2 relative group inline-block text-right">
+        <span className="absolute left-1/2 transform -translate-x-1/2 mt-[-1.5rem] w-max px-2 py-1 text-xs text-[#0f0f0f] bg-[#D1E5F4] rounded opacity-0 group-hover:opacity-100 group-hover:translate-y-[-4px] transition-all duration-300 ease-in-out whitespace-nowrap">
           calculated on unique IP addresses
         </span>
-        <span className="inline-flex items-center justify-end gap-1 min-w-[150px] sm:min-w-[200px]">
+        <span className="inline-flex items-center justify-end gap-1">
           {visitorCount !== null ? (
             <>
               <EyeIcon /> {visitorCount}
