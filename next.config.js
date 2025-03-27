@@ -7,6 +7,8 @@ const nextConfig = {
         { protocol: 'https', hostname: 'i.scdn.co' },
       ],
     },
+    reactStrictMode: false,
+    productionBrowserSourceMaps: false,
   }
   
   module.exports = nextConfig
