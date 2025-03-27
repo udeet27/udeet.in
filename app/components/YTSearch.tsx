@@ -5,7 +5,7 @@ import YouTubeAudioPlayer from "./YoutubeAudio";
 
 // Define the shape of a single search result
 interface SearchResult {
-  videoId: string;
+  id: string;
   // Add other properties if necessary
 }
 
@@ -61,7 +61,7 @@ export default function YTSearch() {
     <span>
       {/* {loading && <p>Loading...</p>} */}
       {!loading && results.length > 0 ? (
-        <YouTubeAudioPlayer videoId={results[0].videoId} />
+        <YouTubeAudioPlayer videoId={results[0].id} />
       ) : (
         <span></span>
       )}
