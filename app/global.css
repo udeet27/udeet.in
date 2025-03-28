@@ -1,5 +1,13 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./fonts/SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .gsi-material-button {
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -57,8 +65,8 @@
 .gsi-material-button .gsi-material-button-contents {
   -webkit-flex-grow: 1;
   flex-grow: 1;
-  font-family: "Roboto", arial, sans-serif;
-  font-weight: 500;
+  font-family: "Geist", sans-serif;
+  font-weight: 400;
   overflow: hidden;
   text-overflow: ellipsis;
   vertical-align: top;
@@ -141,8 +149,9 @@ html {
 
 body {
   font-family: "Geist", sans-serif;
+  /* font-family: 'SF Pro Display', sans-serif; */
   font-optical-sizing: auto;
-  font-weight: 400;
+  /* font-weight: 600; */
   font-style: normal;
 }
 
