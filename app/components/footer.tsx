@@ -253,7 +253,7 @@ export default function Footer() {
           </li>
         </ul>
         <span className="text-gray-500 text-xs mt-4 md:mt-0 md:ml-auto">
-          last updated 24<sup>th</sup> Mar '25
+          last updated 27<sup>th</sup> Mar '25
         </span>
       </div>
     </footer>
