@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     default: "Udeet Mittal | udeet.in",
     template: "%s | Udeet Mittal Portfolio",
   },
+  manifest: '/manifest.json',
   description: "Udeet Mittal Portfolio, personal site",
   icons: {
     icon: "favicon-arc.jpg",
