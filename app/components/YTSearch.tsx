@@ -24,7 +24,7 @@ export default function YTSearch() {
         }
         const data = await res.json();
         if (data.title && data.artist && data.album) {
-          const combinedQuery = `${data.title} ${data.artist} ${data.album} audio`;
+          const combinedQuery = `${data.title} ${data.artist} audio`;
           setSearchQuery(combinedQuery);
           searchYT(combinedQuery);
         } else {
