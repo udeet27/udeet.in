@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from "app/components/mdx";
 import { formatDate2, getActualBlogPosts } from "app/blog/utils";
 import { baseUrl } from "app/sitemap";
+import VisitorCounterBlog from '../../components/VisitorCounterBlog';
 
 export async function generateStaticParams() {
   let posts = getActualBlogPosts();
@@ -98,13 +99,14 @@ export default async function Blog({ params }: { params: { slug: string } }) {
       <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <div className="flex justify-between items-center mt-2 mb-0 py-0 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate2(post.metadata.publishedAt)}
         </p>
+        <VisitorCounterBlog name={post.metadata.title} />
       </div>
       <article className="prose">
-        <CustomMDX source={post.content} />
+        <CustomMDX source={post.content} components={{VisitorCounterBlog}} />
       </article>
     </section>
   );
