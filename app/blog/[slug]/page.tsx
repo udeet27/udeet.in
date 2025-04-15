@@ -99,8 +99,8 @@ export default async function Blog({ params }: { params: { slug: string } }) {
       <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-0 py-0 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+      <div className="flex justify-between items-center mt-2 mb-0 py-0 text-sm text-neutral-600 dark:text-neutral-400">
+        <p className="text-sm">
           {formatDate2(post.metadata.publishedAt)}
         </p>
         <VisitorCounterBlog name={post.metadata.title} />
