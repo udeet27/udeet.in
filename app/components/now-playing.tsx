@@ -205,7 +205,7 @@ function SpotifyWidget() {
       try {
         const res = await fetch("/api/spotify");
         if (!res.ok) {
-          throw new Error("Failed to fetch data. Spotify Web API is down.");
+          throw new Error("Failed to fetch data. Please try again in a bit.");
         }
         const result: Song = await res.json();
         setData(result);
