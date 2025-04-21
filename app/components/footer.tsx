@@ -1,3 +1,5 @@
+import LastUpdated from "./LatestCommitDate";
+
 function ArrowIcon() {
   return (
     <svg
@@ -253,7 +255,7 @@ export default function Footer() {
           </li>
         </ul>
         <span className="text-gray-500 text-xs mt-4 md:mt-0 md:ml-auto">
-          last updated 20<sup>th</sup> Apr '25
+        <LastUpdated owner="udeet27" repo="udeet.in" />
         </span>
       </div>
     </footer>
