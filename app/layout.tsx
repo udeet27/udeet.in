@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: "Udeet Mittal | udeet.in",
-    template: "%s | Udeet Mittal Portfolio",
+    template: "%s | udeet.in",
   },
   manifest: '/manifest.json',
   description: "Udeet Mittal Portfolio, personal site",
