@@ -51,7 +51,7 @@ export function Navbar() {
                   href={path}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-all text-gray-500 hover:text-gray-400 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1 text-xs font-mono"
+                  className="transition-all text-gray-500 hover:text-gray-400 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 mt-2 text-xs font-mono"
                 >
                   {name}
                 </a>
