@@ -1,4 +1,5 @@
 import LastUpdated from "./LatestCommitDate";
+import LastUpdatedCommit from "./LatestCommitMessage";
 
 function ArrowIcon() {
   return (
@@ -254,8 +255,9 @@ export default function Footer() {
             </a>
           </li>
         </ul>
-        <span className="text-gray-500 text-xs mt-4 md:mt-0 md:ml-auto">
-        <LastUpdated owner="udeet27" repo="udeet.in" />
+        <span className="flex flex-row md:flex-col-reverse items-center md:items-end text-gray-500 text-xs mt-3 md:-mt-6 md:ml-auto gap-2">
+          <LastUpdated owner="udeet27" repo="udeet.in" />
+          <LastUpdatedCommit owner="udeet27" repo="udeet.in" />
         </span>
       </div>
     </footer>
