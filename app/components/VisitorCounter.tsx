@@ -57,7 +57,9 @@ const VisitorCounter = () => {
       // Fetch the total number of unique visitors
       const { data, error: fetchError } = await supabase
         .from("visitors")
-        .select("ip", { count: "exact" });
+        .select("ip", { count: "exact" })
+        .is("name", null); // name is null for homepage visitors, 
+                          // and is the name of the blog for blog visitors
 
       if (fetchError) throw fetchError;
 
