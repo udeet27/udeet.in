@@ -40,8 +40,8 @@ const VisitorCounter = () => {
       const response = await fetch("https://api.ipify.org?format=json");
       const { ip } = await response.json();
 
-      // Insert IP into the Supabase database if it doesn't already exist
-      const { data: existing, error } = await supabase
+      // 1. Check if IP already exists for homepage visitors
+      const { data: existing, error: fetchExistingError } = await supabase
         .from("visitors")
         .select("id")
         .eq("ip", ip)
@@ -49,22 +49,30 @@ const VisitorCounter = () => {
         .limit(1)
         .maybeSingle();
 
-      if (error) throw error;
+      if (fetchExistingError) throw fetchExistingError;
+
+      // 2. Insert only if not exists
       if (!existing) {
-        await supabase.from("visitors").insert({ ip });
+        const { error: insertError } = await supabase
+          .from("visitors")
+          .insert({ ip, name: null });
+
+        if (insertError) throw insertError;
       }
 
-      // Fetch the total number of unique visitors
-      const { data, error: fetchError } = await supabase
+      // 3. Fetch TOTAL visitor count (no 1000 limit)
+      const { count, error: countError } = await supabase
         .from("visitors")
-        .select("ip", { count: "exact" })
-        .is("name", null); // name is null for homepage visitors, 
-                          // and is the name of the blog for blog visitors
+        .select("*", {
+          count: "exact",
+          head: true,
+        })
+        .is("name", null);
 
-      if (fetchError) throw fetchError;
+      if (countError) throw countError;
 
-      // Update visitor count state
-      setVisitorCount(data?.length || 0);
+      // 4. Update visitor count state
+      setVisitorCount(count ?? 0);
     } catch (err) {
       console.error("Error tracking visitor:", err);
     }
