@@ -79,9 +79,22 @@ export default function Page() {
           {` and I think this is what sets me apart from the crowd.`}
         </p>
         <p className="mb-4">
-          {`Though having worked most extensively in full stack development and data analytics, I've come to realise that the domain and specific technologies I work in don't`}
-          <em> really </em>
-          {`matter—the problem statement in front of me and the people I work with do.`}
+          {`I'm a CS grad from MIT Manipal with nearly `}
+          <span
+            className="font-medium tracking-tighter"
+            style={{
+              backgroundColor: "#add8e6", // Light green background color
+              color: "#0f0f0f", // Text color
+              padding: "0 4px", // Add padding for better appearance
+              borderRadius: "4px", // Rounded edges similar to the image
+            }}
+          >
+            2 years
+          </span>
+          {` of industry experience across diverse domains, including Web Development, Quality Assurance, Automation, and Data Analytics. My passion lies in continuously improving processes and finding innovative solutions
+           - I never settle for `}
+          <em>{`'it's just how it is.' `}</em>
+          {`Adaptable and quick to learn, I thrive in environments that challenge me and offer opportunities to grow. I am always eager to tackle new problems and contribute meaningfully to any project I'm a part of.`}
         </p>
         <p className="mb-4">
           {`I'm currently looking for my next role as a `}
@@ -94,10 +107,9 @@ export default function Page() {
               borderRadius: "4px", // Rounded edges similar to the image
             }}
           >
-            Software Engineer
+            SDE / SDET
           </span>
-          {`, having industry experience through 4 internships + 1 full-time role.
-     Feel free to reach out at any of the socials or leave a comment below.`}
+          {`. If you think I'd be a good fit for your team, let's connect!`}
         </p>
 
         {/* <div className="my-8">
